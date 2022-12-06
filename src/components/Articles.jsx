@@ -16,12 +16,13 @@ export default function Articles({ selectedTopic }) {
     return <p>Loading...</p>;
   }
   return (
-    <section className="articles-list">
-      <ul>
+    <section>
+      <ul className="articles-list">
         {articles.map((article) => {
           return (
             <li key={article.item_id}>
               <p>{article.title}</p>
+              <p>{article.author}</p>
             </li>
           );
         })}
