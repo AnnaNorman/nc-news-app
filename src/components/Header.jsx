@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
 import { getTopics } from "../api";
 
-export default function Header() {
+export default function Header({ setSelectedTopic }) {
   const [topics, setTopics] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getTopics().then((res) => {
-      console.log(res);
       setTopics(res);
       setIsLoading(false);
     });
   }, []);
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    setSelectedTopic(event.target.value);
   };
 
   return (

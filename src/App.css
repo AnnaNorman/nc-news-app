@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,33 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content min-content auto;
+  grid-template-areas:
+    "Header"
+    "Articles";
+
+  border-color: grey;
+  border-width: 5px;
+  border-style: solid;
+  min-height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  border-color: blue;
+  border-width: 5px;
+  border-style: solid;
+  padding: 10px;
 }

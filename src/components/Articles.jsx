@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../api";
 
-export default function Articles() {
+export default function Articles({ selectedTopic }) {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getArticles().then((res) => {
+    getArticles(selectedTopic).then((res) => {
       setArticles(res);
       setIsLoading(false);
     });
-  }, []);
+  }, [selectedTopic]);
 
   if (isLoading) {
     return <p>Loading...</p>;
