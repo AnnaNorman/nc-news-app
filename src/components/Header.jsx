@@ -17,9 +17,9 @@ export default function Header({ setSelectedTopic }) {
   };
 
   return (
-    <header>
+    <header className="header">
       <h1>NC News</h1>
-      <select onChange={handleSubmit}>
+      <select className="header-button" onChange={handleSubmit}>
         {isLoading ? (
           <option>Loading Topics...</option>
         ) : (
