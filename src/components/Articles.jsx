@@ -22,7 +22,6 @@ export default function Articles({ selectedTopic }) {
           return (
             <li key={article.item_id}>
               <p>{article.title}</p>
-              <p>{article.author}</p>
             </li>
           );
         })}

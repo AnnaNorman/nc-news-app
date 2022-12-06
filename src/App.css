@@ -60,12 +60,11 @@ main {
 .header {
   padding: 20px 0;
   margin-bottom: 10px;
-  border-bottom: 1px solid grey;
-
+  border-bottom: 1px solid;
   font-size: 1rem;
   font-weight: 400;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  color: #828792;
+  color: #2f2c33;
   background-image: -moz-element();
 }
 
