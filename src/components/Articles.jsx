@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../api";
+import { Link } from "react-router-dom";
 
 export default function Articles({ selectedTopic }) {
   const [articles, setArticles] = useState([]);
@@ -22,7 +23,13 @@ export default function Articles({ selectedTopic }) {
           return (
             <li key={article.item_id}>
               <p>{article.title}</p>
-              <p>{article.author}</p>
+              <p className="author">{article.author}</p>
+              <Link
+                to={`/article/${article.article_id}`}
+                className="each-individual-article"
+              >
+                View Article
+              </Link>
             </li>
           );
         })}
