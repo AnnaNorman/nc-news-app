@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getTopics } from "../api";
-
+import { Link } from "react-router-dom";
 export default function Header({ setSelectedTopic }) {
   const [topics, setTopics] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +18,10 @@ export default function Header({ setSelectedTopic }) {
 
   return (
     <header className="header">
-      <h1>NC News</h1>
+      <h1>NC News </h1>
+      <Link to={`/`} className="home">
+        Home
+      </Link>
       <select className="header-button" onChange={handleSubmit}>
         {isLoading ? (
           <option>Loading Topics...</option>
