@@ -26,7 +26,7 @@ export default function Articles({ selectedTopic }) {
               <p className="author">{article.author}</p>
               <Link
                 to={`/article/${article.article_id}`}
-                className="each-individual-article"
+                className="each-individual-article-link"
               >
                 View Article
               </Link>

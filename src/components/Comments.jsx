@@ -12,20 +12,22 @@ export default function Comments({ article_id }) {
   }, [article_id]);
 
   return (
-    <section>
-      <h2 className="comment-header">Comments</h2>
+    <>
+      <section>
+        {comments.length === 0 ? <h2>No comments yet</h2> : <h2>Comments</h2>}
 
-      <ul className="comments-list">
-        {comments.map((comment) => {
-          return (
-            <li className="actual-comments" key={comment.comment_id}>
-              <p>{comment.author}</p>
-              <p>{comment.body}</p>
-              <p>{comment.votes} votes </p>
-            </li>
-          );
-        })}
-      </ul>
-    </section>
+        <ul className="comments-list">
+          {comments.map((comment) => {
+            return (
+              <li className="actual-comments" key={comment.comment_id}>
+                <p className="comment-author">{comment.author}</p>
+                <p>{comment.body}</p>
+                <p>{comment.votes} votes </p>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    </>
   );
 }

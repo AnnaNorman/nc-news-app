@@ -30,7 +30,7 @@ export default function Article() {
       setVotes((currentVotes) => {
         return currentVotes - 1;
       });
-      console.log(err);
+      console.log("Upvoting was not possible at this time");
     });
   };
 

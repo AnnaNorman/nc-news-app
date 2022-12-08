@@ -32,3 +32,14 @@ export const increaseVote = (article_id) => {
     return res.data.article;
   });
 };
+export const postComment = (article_id, comment) => {
+  const newComment = {
+    username: user,
+    body: comment,
+  };
+  return newsApi
+    .post(`api/articles/${article_id}/comments`, newComment)
+    .then((res) => {
+      return res.data.comment;
+    });
+};
