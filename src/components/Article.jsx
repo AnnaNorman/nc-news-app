@@ -9,6 +9,7 @@ export default function Article() {
   const [votes, setVotes] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const { article_id } = useParams();
+  const [err, setErr] = useState(null);
 
   useEffect(() => {
     getArticleById(article_id).then((res) => {
@@ -24,16 +25,18 @@ export default function Article() {
   const handleVote = (event) => {
     event.preventDefault();
     setVotes((currentVotes) => {
+      setErr(null);
       return currentVotes + 1;
     });
     increaseVote(article_id).catch((err) => {
       setVotes((currentVotes) => {
+        setErr("Upvoting was not possible at this time");
         return currentVotes - 1;
       });
-      console.log("Upvoting was not possible at this time");
+      console.log(err);
     });
   };
-
+  if (err) return <p>{err}</p>;
   return (
     <section className="article">
       <div>
