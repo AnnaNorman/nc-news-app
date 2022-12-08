@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../api";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 export default function Articles({ selectedTopic }) {
   const [articles, setArticles] = useState([]);
@@ -26,7 +26,7 @@ export default function Articles({ selectedTopic }) {
               <p className="author">{article.author}</p>
               <Link
                 to={`/article/${article.article_id}`}
-                className="each-individual-article"
+                className="each-individual-article-link"
               >
                 View Article
               </Link>

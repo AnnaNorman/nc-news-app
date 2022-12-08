@@ -5,6 +5,7 @@ import React from "react";
 import Header from "./components/Header";
 import Articles from "./components/Articles";
 import Article from "./components/Article";
+import Comments from "./components/Comments";
 
 export default function App() {
   const [selectedTopic, setSelectedTopic] = useState("");
@@ -14,6 +15,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Articles selectedTopic={selectedTopic} />} />
         <Route path="/article/:article_id" element={<Article />} />
+        <Route path="article/:article_id/comments" element={<Comments />} />
       </Routes>
     </main>
   );
