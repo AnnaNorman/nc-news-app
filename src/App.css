@@ -91,9 +91,9 @@ main {
   border: solid 3px #776d6a;
   text-align: center;
 
-  border-radius: 5px;
+  border-radius: 20px;
   list-style: none;
-  padding: 20px;
+  padding: 8px;
   color: #2f2c33;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 1.5vw;
@@ -115,10 +115,10 @@ main {
 
 .each-individual-article-link {
   text-align: center;
-  margin-top: 9px;
+  margin-top: 10px;
   border-radius: 1px;
   list-style: none;
-  padding-top: 1px;
+  padding-top: none;
   color: #2f2c33;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 1.5vw;
