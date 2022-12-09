@@ -4,17 +4,14 @@ import { postComment } from "../api";
 export default function CommentAdder({ setComments, article_id }) {
   const [newComment, setNewComment] = useState("");
   const [err, setErr] = useState(null);
-
-  const handleClick = (event) => {
-    event.target.value.disabled = true;
-    console.log("button clicked");
-  };
+  const [isPosting, setIsPosting] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    setIsPosting(true);
     postComment(article_id, newComment)
       .then((commentFromApi) => {
+        setIsPosting(false);
         setNewComment("");
         setComments((currComments) => {
           setErr(null);
@@ -38,7 +35,11 @@ export default function CommentAdder({ setComments, article_id }) {
           onChange={(event) => setNewComment(event.target.value)}
         ></textarea>
         <p>
-          <button onClick={handleClick} className="comment-adder-button">
+          <button
+            type="submit"
+            className="comment-adder-button"
+            disabled={isPosting}
+          >
             Add a comment
           </button>
         </p>
