@@ -3,24 +3,31 @@ import { postComment } from "../api";
 
 export default function CommentAdder({ setComments, article_id }) {
   const [newComment, setNewComment] = useState("");
+  const [err, setErr] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    postComment(article_id, newComment).then((commentFromApi) => {
-      setNewComment("");
-      setComments((currComments) => {
-        const newComments = [...currComments];
-        newComments.push(commentFromApi);
-        return newComments;
+    postComment(article_id, newComment)
+      .then((commentFromApi) => {
+        setNewComment("");
+        setComments((currComments) => {
+          setErr(null);
+          const newComments = [...currComments];
+          newComments.unshift(commentFromApi);
+          return newComments;
+        });
+      })
+      .catch(() => {
+        setErr("Comment didn't post");
       });
-    });
   };
-
+  if (err) return <p>{err}</p>;
   return (
     <div>
       <form className="comment-adder" onSubmit={handleSubmit}>
         <textarea
+          required
           id="newComment"
           value={newComment}
           onChange={(event) => setNewComment(event.target.value)}

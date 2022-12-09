@@ -28,12 +28,11 @@ export default function Article() {
       setErr(null);
       return currentVotes + 1;
     });
-    increaseVote(article_id).catch((err) => {
+    increaseVote(article_id).catch(() => {
       setVotes((currentVotes) => {
         setErr("Upvoting was not possible at this time");
         return currentVotes - 1;
       });
-      console.log(err);
     });
   };
   if (err) return <p>{err}</p>;
