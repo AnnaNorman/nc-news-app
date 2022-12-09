@@ -5,6 +5,11 @@ export default function CommentAdder({ setComments, article_id }) {
   const [newComment, setNewComment] = useState("");
   const [err, setErr] = useState(null);
 
+  const handleClick = (event) => {
+    event.target.value.disabled = true;
+    console.log("button clicked");
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -33,7 +38,9 @@ export default function CommentAdder({ setComments, article_id }) {
           onChange={(event) => setNewComment(event.target.value)}
         ></textarea>
         <p>
-          <button className="comment-adder-button">Add a comment</button>
+          <button onClick={handleClick} className="comment-adder-button">
+            Add a comment
+          </button>
         </p>
       </form>
     </div>
