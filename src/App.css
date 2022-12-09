@@ -167,6 +167,11 @@ main {
   display: grid;
   grid-template-columns: 10em 10em 10em;
 } */
+.comments-header {
+  margin-top: 10px;
+  padding: 20px;
+}
+
 .comments {
   text-align: center;
   padding: 40px;
@@ -217,4 +222,22 @@ main {
 }
 .comment-author {
   color: #2f2c33;
+}
+.comment-adder {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #828792;
+  border-color: #828792;
+  padding: 20px 0;
+  margin-bottom: 10px;
+  border-bottom: 1px grey;
+  text-align: center;
+}
+.comment-adder-button {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #828792;
+  border-color: #828792;
 }

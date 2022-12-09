@@ -32,3 +32,15 @@ export const increaseVote = (article_id) => {
     return res.data.article;
   });
 };
+export const postComment = (article_id, comment) => {
+  const postBody = {
+    username: "weegembump",
+    body: comment,
+  };
+
+  return newsApi
+    .post(`/articles/${article_id}/comments`, postBody)
+    .then((res) => {
+      return res.data.comment;
+    });
+};

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-import { getCommentsByArticleId, patchComment } from "../api";
+import { getCommentsByArticleId } from "../api";
+import CommentAdder from "./CommentAdder";
 
 export default function Comments({ article_id }) {
   const [comments, setComments] = useState([]);
@@ -14,8 +15,12 @@ export default function Comments({ article_id }) {
   return (
     <>
       <section>
-        {comments.length === 0 ? <h2>No comments yet</h2> : <h2>Comments</h2>}
-
+        {comments.length === 0 ? (
+          <h2>No comments yet</h2>
+        ) : (
+          <h2 className="comments-header">Comments</h2>
+        )}
+        <CommentAdder setComments={setComments} article_id={article_id} />
         <ul className="comments-list">
           {comments.map((comment) => {
             return (
