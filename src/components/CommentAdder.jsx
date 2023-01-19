@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { postComment } from "../api";
-
 export default function CommentAdder({ setComments, article_id }) {
   const [newComment, setNewComment] = useState("");
   const [err, setErr] = useState(null);
   const [isPosting, setIsPosting] = useState(false);
-
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsPosting(true);
