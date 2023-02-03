@@ -15,7 +15,7 @@ Running This App Locally
 If you would like to to run this project in your local enviroment, please enter the following commands in your terminal:
 
 1. cd <your chosen folder>
-2. git clone git@github.com:dan77uk/nc-news.git
+2. git clone git@github.com:https://github.com/AnnaNorman/nc-news-app
 3. cd nc-news
 4. npm install
 5. npm start
