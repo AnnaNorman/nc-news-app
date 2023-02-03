@@ -2,6 +2,9 @@ Northcoders News
 
 Northcoders News is a social news aggregation, web content rating, and discussion website.
 
+The live site can be viewed at https://annanorman-news.netlify.app/
+
+
 Northcoders News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API. Registered users can also add comments about an article.
 
 This is a C.R.U.D application, built in React, with the API built in a Test Driven Development environment using Express, PostgreSQL and Supertest.
