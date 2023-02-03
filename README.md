@@ -12,7 +12,8 @@ This is a C.R.U.D application, built in React, with the API built in a Test Driv
 Required Node Version
 node v18.12.1
 
-Running This App Locally
+Running this App locally:
+
 If you would like to to run this project in your local enviroment, please enter the following commands in your terminal:
 
 1. cd <your chosen folder>
